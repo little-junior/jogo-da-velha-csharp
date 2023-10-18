@@ -2,6 +2,11 @@
 const string condicaoBolinhaVencedor = "OOO";
 const string condicaoXisVencedor = "XXX";
 
+//Menu inicial
+Console.Clear();
+Console.WriteLine("==========BEM VINDO AO JOGO DA VELHA!!==========");
+Console.WriteLine("\n\nPRESSIONE QUALQUER TECLA PARA COMEÇAR");
+Console.ReadKey();
 
 while (true)
 {
@@ -14,12 +19,7 @@ while (true)
     bool bolinhaVencedor = false, xisVencedor = false;
 
     int rodada = 1;
-
-    //Menu inicial
-    Console.Clear();
-    Console.WriteLine("==========BEM VINDO AO JOGO DA VELHA!!==========");
-    Console.WriteLine("\n\nDIGITE QUALQUER TECLA PARA COMEÇAR");
-    Console.ReadKey();
+    
     Console.Clear();
     Console.WriteLine("DIGITE O NÚMERO DA POSIÇÃO NA QUAL DESEJA EFETUAR SUA JOGADA\n");
     Console.WriteLine($" 1 | 2 | 3");
