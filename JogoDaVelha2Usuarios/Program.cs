@@ -28,7 +28,7 @@ while (true)
     Console.WriteLine($"-----------");
     Console.WriteLine($" 7 | 8 | 9\n");
 
-    while (true)
+    while (rodada <= 9)
     {
 
         //Entrada do usuário
