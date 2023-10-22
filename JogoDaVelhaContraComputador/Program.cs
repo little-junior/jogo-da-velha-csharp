@@ -1,4 +1,5 @@
-﻿const string condicaoBolinhaVencedor = "OOO";
+﻿//Constantes que verificam as condições de vitória
+const string condicaoBolinhaVencedor = "OOO";
 const string condicaoXisVencedor = "XXX";
 
 //Menu inicial
@@ -12,13 +13,13 @@ while (true)
     string[,] matrizJogo = new string[3, 3] { { " ", " ", " " }, { " ", " ", " " }, { " ", " ", " " } };
 
     string simboloJogador, resultadoFinal;
-    int trocaJogador = 1; //Bolinha sempre começa
+    int trocaJogador = 1; //Computador-Bolinha sempre começa
 
     bool bolinhaVencedor = false, xisVencedor = false;
 
     int rodada = 1;
 
-
+    //Tutorial
     Console.Clear();
     Console.WriteLine("DIGITE O NÚMERO DA POSIÇÃO NA QUAL DESEJA EFETUAR SUA JOGADA QUANDO SOLICITADO\n");
     Console.WriteLine($" 1 | 2 | 3");
@@ -27,14 +28,18 @@ while (true)
     Console.WriteLine($"-----------");
     Console.WriteLine($" 7 | 8 | 9\n");
     Console.ReadKey();
+
     while (rodada <= 9)
     {
+        //Controle de jogador
         simboloJogador = trocaJogador == 1 ? "O" : "X";
 
         int linhaJogada = 0, colunaJogada = 0;
 
+        //Gerador de posição
         int numeroDaJogadaComputador = new Random().Next(1, 10);
 
+        //Ações do computador
         if (simboloJogador == "O")
         {
 
@@ -91,7 +96,7 @@ while (true)
         }
 
         
-
+        //Ações do usuário
         else if (simboloJogador == "X")
         {
             
@@ -151,11 +156,11 @@ while (true)
         }
 
         
-
+        //Alocação da jogada
         matrizJogo[linhaJogada, colunaJogada] = simboloJogador;
         rodada++;
 
-
+        //Impressão da matriz
         Console.Clear();
         Console.WriteLine($"Computador jogou na posição {numeroDaJogadaComputador}\n");
         Console.WriteLine($"\n {matrizJogo[0, 0]} | {matrizJogo[0, 1]} | {matrizJogo[0, 2]}");
@@ -164,6 +169,7 @@ while (true)
         Console.WriteLine($"-----------");
         Console.WriteLine($" {matrizJogo[2, 0]} | {matrizJogo[2, 1]} | {matrizJogo[2, 2]}\n");
 
+        //Verificação de vitória por linhas
         for (int i = 0; i < 3; i++)
         {
             if (bolinhaVencedor || xisVencedor)
@@ -255,6 +261,7 @@ while (true)
         trocaJogador *= -1;
     }
 
+    //Reinicialização do jogo
     Console.Write("\nDeseja recomeçar o jogo? (S ou s para recomeçar | Qualquer outra tecla para sair) -> ");
     string? decisaoUsuario = Console.ReadLine();
     if (decisaoUsuario == "S" || decisaoUsuario == "s")
