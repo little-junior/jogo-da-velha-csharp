@@ -11,7 +11,7 @@ while (true)
 {
     string[,] matrizJogo = new string[3, 3] { { " ", " ", " " }, { " ", " ", " " }, { " ", " ", " " } };
 
-    string simboloJogador, quemJoga, resultadoFinal;
+    string simboloJogador, resultadoFinal;
     int trocaJogador = 1; //Bolinha sempre começa
 
     bool bolinhaVencedor = false, xisVencedor = false;
@@ -256,7 +256,7 @@ while (true)
     }
 
     Console.Write("\nDeseja recomeçar o jogo? (S ou s para recomeçar | Qualquer outra tecla para sair) -> ");
-    string decisaoUsuario = Console.ReadLine();
+    string? decisaoUsuario = Console.ReadLine();
     if (decisaoUsuario == "S" || decisaoUsuario == "s")
     {
         continue;
